@@ -1,0 +1,58 @@
+﻿@model hotel_startup.Models.Booking
+@{
+}
+
+<form action="View" method="post" class="mt-5">
+    <div class="row">
+        <div class="col-lg-3">
+            <label for="" class="col-form-label">Id</label>
+            <input type="text" name="id"  id="txtId" class="form-control" asp-for="Id" readonly />
+
+        </div>
+        <div class="col-lg-3">
+            <label for="txtName" class="col-form-label">name</label>
+            <input type="text" name="name"  id="txtName" class="form-control" asp-for="Name" />
+
+        </div>
+        <div class="col-lg-3">
+            <label for="txtMobile" class="col-form-label">mobile</label>
+            <input type="number" name="mobile"  id="txtMobile" class="form-control" asp-for="mobile" />
+
+        </div>
+        <div class="col-lg-3">
+            <label for="txtstartDate" class="col-form-label">start date</label>
+            <input type="date" name="startdate"  id="txtstartDate" class="form-control" asp-for="startDate" />
+
+        </div>
+        <div class="col-lg-3">
+            <label for="txtendDate" class="col-form-label">end date</label>
+            <input type="date" name="enddate"  id="txtendDate" class="form-control" asp-for="endDate" />
+
+        </div>
+        <div class="col-lg-3">
+            <label for="txtPersonNo" class="col-form-label">Person No</label>
+            <input type="number" name="personno"  id="txtPersonNo" class="form-control" asp-for="personNo" />
+
+        </div>
+        <div class="col-lg-3">
+            <label for="selectCityId" class="col-form-label"> City</label>
+            <select type="select" name="personno" id="selectCityId" class="form-control" asp-for="cityId" asp-items="ViewBag.City">
+                @*<option value="1">sana</option>
+                <option value="2">aden</option>
+                <option value="3">hadramout</option>*@
+            </select>
+
+        </div>
+        <div class="col-lg-3">
+            <label for="selectRoomTypeId" class="col-form-label"> Room Type</label>
+            <select type="select" name="roomtype" id="selectRoomTypeId" class="form-control" asp-for="roomTypeId">
+                <option value="1">Room</option>
+                <option value="2">Suit</option>
+
+            </select>
+
+        </div>
+    </div>
+    <button class="btn btn-primary" type="submit">Submit</button>
+    <button class="btn btn-danger" type="submit" asp-action="Delete" asp-controller="Bookings">Delete</button>
+</form>

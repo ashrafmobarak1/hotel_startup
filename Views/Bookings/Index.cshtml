@@ -1,0 +1,36 @@
+﻿@model List<hotel_startup.Models.Booking>
+@{
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Mobile</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th> No Of Persons</th>
+            <th> city</th>
+            <th> Room Type</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var books in Model)
+        {
+            <tr>
+                <td>@books.Id</td>
+                <td>@books.Name</td>
+                <td>@books.mobile</td>
+                <td>@books.startDate</td>
+                <td>@books.endDate</td>
+                <td>@books.personNo</td>
+                <td>@books.City.Name</td>
+                <td>@books.RoomType.Name</td>
+                <td><a href="Bookings/View/@books.Id">View</a></td>
+            </tr>
+        }
+
+    </tbody>
+  
+</table>

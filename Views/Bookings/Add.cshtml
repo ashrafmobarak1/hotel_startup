@@ -1,0 +1,60 @@
+﻿@model hotel_startup.Models.Booking
+
+@{
+   // var cit = ViewBag.City as hotel_startup.Models.City;
+}
+
+
+
+<form action="Create" method="post">
+    @*@foreach (var cities in ViewBag.City)
+    {
+        @cities.Name
+    }*@
+        <div class="row">
+            <div class="col-lg-3">
+                <label for="txtName" class="col-form-label">name</label>
+                <input type="text" name="name" value="" id="txtName" class="form-control" asp-for="Name" />
+
+            </div>
+            <div class="col-lg-3">
+                <label for="txtMobile" class="col-form-label">mobile</label>
+                <input type="number" name="mobile" value="" id="txtMobile" class="form-control" asp-for="mobile" />
+
+            </div>
+            <div class="col-lg-3">
+                <label for="txtstartDate" class="col-form-label">start date</label>
+                <input type="date" name="startdate" value="" id="txtstartDate" class="form-control" asp-for="startDate" />
+
+            </div>
+            <div class="col-lg-3">
+                <label for="txtendDate" class="col-form-label">end date</label>
+                <input type="date" name="enddate" value="" id="txtendDate" class="form-control" asp-for="endDate" />
+
+            </div>
+            <div class="col-lg-3">
+                <label for="txtPersonNo" class="col-form-label">Person No</label>
+                <input type="number" name="personno" value="" id="txtPersonNo" class="form-control" asp-for="personNo" />
+
+            </div>
+            <div class="col-lg-3">
+                <label for="selectCityId" class="col-form-label"> City</label>
+                <select type="select" name="personno" id="selectCityId" class="form-control" asp-for="cityId" asp-items="ViewBag.City">
+                    @*<option value="1">sana</option>
+                        <option value="2">aden</option>
+                        <option value="3">hadramout</option>*@
+                </select>
+
+            </div>
+            <div class="col-lg-3">
+                <label for="selectRoomTypeId" class="col-form-label"> Room Type</label>
+                <select type="select" name="roomtype" id="selectRoomTypeId" class="form-control" asp-for="roomTypeId" asp-items="ViewBag.RoomType">
+                    @*<option value="1">Room</option>
+                    <option value="2">Suit</option>*@
+
+                </select>
+
+            </div>
+        </div>
+        <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
